@@ -15,6 +15,7 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('client_id');
             $table->date('start_reservation');
             $table->date('end_reservation');
             $table->decimal('import_service',8,2);

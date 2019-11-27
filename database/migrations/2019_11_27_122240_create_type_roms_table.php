@@ -15,6 +15,7 @@ class CreateTypeRomsTable extends Migration
     {
         Schema::create('type_roms', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('promo_id');
             $table->char('type',16);
             $table->decimal('prize',8,2);
             $table->timestamps();

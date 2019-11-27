@@ -15,6 +15,7 @@ class CreateLodgmentsTable extends Migration
     {
         Schema::create('lodgments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('room_id');
             $table->char('name',100);
             $table->string('direction');
             $table->string('picture');
