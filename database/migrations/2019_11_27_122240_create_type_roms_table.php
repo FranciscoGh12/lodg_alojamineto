@@ -17,6 +17,7 @@ class CreateTypeRomsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('promo_id');
             $table->char('type',16);
+            $table->char('description',180);
             $table->decimal('prize',8,2);
             $table->timestamps();
         });
