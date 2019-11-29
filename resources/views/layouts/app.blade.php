@@ -21,7 +21,6 @@
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Styles -->
-    <link href="{{ asset('backend/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- CSS Files -->
     <link href="{{asset('backend/css/material-dashboard.css')}}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -32,16 +31,15 @@
 <body>
     <div id="app">
         <div class="wrapper ">
-            @if (Request::is('admin'))
+            @if (Request::is('admin*'))
                 @include('layouts.partial.sidebar')
             @endif
-
             <div class="main-panel">
-            @if (Request::is('admin'))
+            @if (Request::is('admin*'))
                 @include('layouts.partial.topbar')
             @endif
                 @yield('content')
-            @if (Request::is('admin'))
+            @if (Request::is('admin*'))
                 @include('layouts.partial.backfooter')
             @endif
 

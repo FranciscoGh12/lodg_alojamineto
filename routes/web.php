@@ -12,13 +12,31 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('layouts.index');
+})->name('index');
 
-Route::get('admin/dashboard', function () {
-    return view('admin.dashboard');
-});
+Route::get('/contact', function () {
+    return view ('layouts.contact');
+})->name('contact');
+
+Route::get('/about', function () {
+    return view('layouts.about');
+})->name('about');
+
+Route::get('/lodgment', function () {
+    return view('layouts.lodgment');
+})->name('lodgments');
+
+Route::get('/lodgment_item', function () {
+    return view('layouts.lodgment_item');
+})->name('lodg_item');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix'=>'admin','middleware'=>'auth','namespace'=>'Admin'], function () {
+    Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
+    Route::resource('typeRoom', 'TypeRoomController');
+});
+

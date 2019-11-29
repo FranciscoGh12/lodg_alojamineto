@@ -1733,8 +1733,8 @@ h1, h2, h3, h4, h5,
 
 .range-output {
   font-weight: bold; }
-  .range-output:after {
-    content: "Km";
+  .range-output:before {
+    content: "$";
     font-weight: normal; }
 
 .how-it-work-step {

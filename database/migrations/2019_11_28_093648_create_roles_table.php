@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeRomsTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateTypeRomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_roms', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('promo_id');
-            $table->char('type',16);
-            $table->char('description',180);
-            $table->decimal('prize',8,2);
+            $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateTypeRomsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_roms');
+        Schema::dropIfExists('roles');
     }
 }
