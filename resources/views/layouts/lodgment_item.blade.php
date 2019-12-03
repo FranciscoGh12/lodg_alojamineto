@@ -207,31 +207,42 @@
         </div>
         <div class="col-lg-3 ml-auto">
 
-          <div class="mb-5">
-            <h3 class="h5 text-black mb-3">Filters</h3>
-            <form action="#" method="post">
-              <div class="form-group">
-                <input type="text" placeholder="Que estas buscando?" class="form-control">
-              </div>
-              <div class="form-group">
-                <div class="select-wrap">
-                    <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                    <select class="form-control" name="" id="">
-                      <option value="">All Categories</option>
-                      <option value="">Hotel</option>
-                      <option value="">Posada</option>
-                    </select>
-                  </div>
-              </div>
-              <div class="form-group">
-                <!-- select-wrap, .wrap-icon -->
-                <div class="wrap-icon">
-                  <span class="icon icon-room"></span>
-                  <input type="text" placeholder="Location" class="form-control">
-                </div>
-              </div>
-            </form>
-          </div>
+                <div class="mb-5">
+                        <h3 class="h5 text-black mb-3">Filters</h3>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <div class="select-wrap">
+                                    <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+                                    <select class="form-control" name="" id="">
+                                        <option value="">Alojamiento</option>
+                                        <option value="">Hotel</option>
+                                        <option value="">Posada</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                    <div class="select-wrap">
+                                        <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+                                        <select class="form-control" name="" id="">
+                                                <option value="">Habitacion</option>
+                                                <option value="">Individual</option>
+                                                <option value="">Matrimonial</option>
+                                                <option value="">Doble</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            <div class="form-group">
+                                <!-- select-wrap, .wrap-icon -->
+                                <div class="wrap-icon">
+                                    <span class="icon icon-room"></span>
+                                    <input type="text" placeholder="TLACOTALPAN" class="form-control" disabled>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
 
           <div class="mb-5">
             <form action="#" method="post">

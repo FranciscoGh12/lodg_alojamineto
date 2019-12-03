@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Styles -->
     <!-- CSS Files -->
-    <link href="{{asset('backend/css/material-dashboard.css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/css/material-dashboard.css?v=2.1.1')}}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('backend/demo/demo.css')}}" rel="stylesheet" />
     @stack('css')

@@ -121,7 +121,7 @@ data-aos="fade" data-stellar-background-ratio="0.5">
 
             <div class="listing-item">
                 <div class="listing-image">
-                    <img src="images/img_1.jpg" alt="Free Website Template by Free-Template.co"
+                    <img src="images/img_1.jpg" alt=""
                         class="img-fluid">
                 </div>
                 <div class="listing-item-content">
@@ -129,88 +129,6 @@ data-aos="fade" data-stellar-background-ratio="0.5">
                         title="Bookmark"><span class="icon-heart"></span></a>
                     <a class="px-3 mb-3 category" href="#">Hotels</a>
                     <h2 class="mb-1"><a href="listings-single.html">Luxe Hotel</a></h2>
-                    <span class="address">West Orange, New York</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
-
-            <div class="listing-item">
-                <div class="listing-image">
-                    <img src="images/img_2.jpg" alt="Free Website Template by Free-Template.co"
-                        class="img-fluid">
-                </div>
-                <div class="listing-item-content">
-                    <a href="listings-single.html" class="bookmark"><span class="icon-heart"></span></a>
-                    <a class="px-3 mb-3 category" href="#">Restaurants</a>
-                    <h2 class="mb-1"><a href="listings-single.html">Jones Grill &amp; Restaurants</a></h2>
-                    <span class="address">Brooklyn, New York</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
-
-            <div class="listing-item">
-                <div class="listing-image">
-                    <img src="images/img_3.jpg" alt="Free Website Template by Free-Template.co"
-                        class="img-fluid">
-                </div>
-                <div class="listing-item-content">
-                    <a href="listings-single.html" class="bookmark"><span class="icon-heart"></span></a>
-                    <a class="px-3 mb-3 category" href="#">Events</a>
-                    <h2 class="mb-1"><a href="listings-single.html">Live Band</a></h2>
-                    <span class="address">West Orange, New York</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
-
-            <div class="listing-item">
-                <div class="listing-image">
-                    <img src="images/img_4.jpg" alt="Free Website Template by Free-Template.co"
-                        class="img-fluid">
-                </div>
-                <div class="listing-item-content">
-                    <a href="listings-single.html" class="bookmark" data-toggle="tooltip" data-placement="left"
-                        title="Bookmark"><span class="icon-heart"></span></a>
-                    <a class="px-3 mb-3 category" href="#">Others</a>
-                    <h2 class="mb-1"><a href="listings-single.html">Gourmet Coffees</a></h2>
-                    <span class="address">New York City</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
-
-            <div class="listing-item">
-                <div class="listing-image">
-                    <img src="images/img_5.jpg" alt="Free Website Template by Free-Template.co"
-                        class="img-fluid">
-                </div>
-                <div class="listing-item-content">
-                    <a href="listings-single.html" class="bookmark"><span class="icon-heart"></span></a>
-                    <a class="px-3 mb-3 category" href="#">Spa</a>
-                    <h2 class="mb-1"><a href="listings-single.html">La Italia Spa</a></h2>
-                    <span class="address">Italy</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
-
-            <div class="listing-item">
-                <div class="listing-image">
-                    <img src="images/img_6.jpg" alt="Free Website Template by Free-Template.co"
-                        class="img-fluid">
-                </div>
-                <div class="listing-item-content">
-                    <a href="listings-single.html" class="bookmark"><span class="icon-heart"></span></a>
-                    <a class="px-3 mb-3 category" href="#">Stores</a>
-                    <h2 class="mb-1"><a href="listings-single.html">Super Market Mall</a></h2>
                     <span class="address">West Orange, New York</span>
                 </div>
             </div>
@@ -226,9 +144,10 @@ data-aos="fade" data-stellar-background-ratio="0.5">
 <div class="container">
     <div class="row justify-content-center mb-5">
         <div class="col-md-7 text-center border-primary">
-            <h2 class="font-weight-light text-primary">How It Works</h2>
-            <p class="color-black-opacity-5">Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts. </p>
+            <h2 class="font-weight-light text-primary">¿Como Reservar?</h2>
+            <p class="color-black-opacity-5">
+            Con tan solo un click podras disfrutar del mejor alojamiento que nosotros te ofrecemos.
+            </p>
         </div>
     </div>
 
@@ -236,37 +155,41 @@ data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
             <div class="how-it-work-step">
                 <div class="img-wrap">
-                    <img src="images/step-1.svg" alt="Free website template by Free-Template.co"
+                <img src="{{url('frontend/images/steps/step1.png')}}" alt="Step1 Buscar"
                         class="img-fluid">
                 </div>
                 <span class="number">1</span>
-                <h3>Decide What To Do</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                    there live the blind texts.</p>
+                <h3>Busca y selecciona el mejor alojamiento</h3>
+                <p>
+                    Busca entre la variedad de alojamientos y selecciona el mejor para ti con un
+                    precio accesible.
+                </p>
             </div>
         </div>
         <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
             <div class="how-it-work-step">
                 <div class="img-wrap">
-                    <img src="images/step-2.svg" alt="Free website template by Free-Template.co"
+                        <img src="{{url('frontend/images/steps/step2.png')}}" alt="Step2 Reservar"
                         class="img-fluid">
                 </div>
                 <span class="number">2</span>
-                <h3>Find What You Want</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                    there live the blind texts.</p>
+                <h3>Reservar</h3>
+                <p>
+                    Si tu alojamiento esta disponible, es hora de reservar.
+                </p>
             </div>
         </div>
         <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
             <div class="how-it-work-step">
                 <div class="img-wrap">
-                    <img src="images/step-3.svg" alt="Free website template by Free-Template.co"
+                        <img src="{{url('frontend/images/steps/step3.png')}}" alt="Step3 Disfrutar"
                         class="img-fluid">
                 </div>
                 <span class="number">3</span>
-                <h3>Explore Amazing Places</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                    there live the blind texts.</p>
+                <h3>Disfruta la experiencia</h3>
+                <p>
+                    Relajate y ponte comodo en tu alojamiento, porque has hecho una exelente eleccion.
+                </p>
             </div>
         </div>
     </div>
@@ -341,20 +264,19 @@ data-aos="fade" data-stellar-background-ratio="0.5">
 
 
 <div class="py-5 bg-primary">
-<div class="container">
-    <div class="row">
-        <div class="col-lg-7 mr-auto mb-4 mb-lg-0">
-            <h2 class="mb-3 mt-0 text-white">Let's get started. Create your account</h2>
-            <p class="mb-0 text-white">Far far away, behind the word mountains, far from the countries Vokalia
-                and Consonantia, there live the blind texts.</p>
-        </div>
-        <div class="col-lg-4">
-            <p class="mb-0"><a href="signup.html"
-                    class="btn btn-outline-white text-white btn-md px-5 font-weight-bold btn-md-block">Sign
-                    Up</a></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mr-auto mb-4 mb-lg-0">
+                    <h2 class="mb-3 mt-0 text-white">Registrate. Crea tu cuenta</h2>
+                    <p class="mb-0 text-white">Ponte en contacto con nosotros para registrarte </p>
+                </div>
+                <div class="col-lg-4">
+                    <p class="mb-0"><a href="signup.html"
+                            class="btn btn-outline-white text-white btn-md px-5 font-weight-bold btn-md-block">Sign Up</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
 
 @endsection
