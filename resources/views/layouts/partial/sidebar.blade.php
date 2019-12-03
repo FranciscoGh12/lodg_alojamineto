@@ -15,50 +15,38 @@ data-image="{{url('backend/img/sidebar-1.jpg')}}">
         </li>
         <li class="nav-item ">
             <a class="nav-link" href="./user.html">
-                <i class="material-icons">person</i>
-                <p>User Profile</p>
+                <i class="material-icons">account_box</i>
+                <p>Alojamientos</p>
             </a>
         </li>
         <li class="nav-item ">
             <a class="nav-link" href="./tables.html">
                 <i class="material-icons">content_paste</i>
-                <p>Table List</p>
+                <p>Reservaciones</p>
             </a>
         </li>
         <li class="nav-item ">
             <a class="nav-link" href="./typography.html">
-                <i class="material-icons">library_books</i>
-                <p>Typography</p>
+                <i class="material-icons">hotel</i>
+                <p>Habitaciones</p>
             </a>
         </li>
         <li class="nav-item ">
             <a class="nav-link" href="./icons.html">
-                <i class="material-icons">bubble_chart</i>
-                <p>Icons</p>
+                <i class="material-icons">attach_money</i>
+                <p>Promociones</p>
             </a>
         </li>
         <li class="nav-item ">
             <a class="nav-link" href="./map.html">
-                <i class="material-icons">location_ons</i>
-                <p>Maps</p>
+                <i class="material-icons">chat</i>
+                <p>Mensajes</p>
             </a>
         </li>
         <li class="nav-item ">
             <a class="nav-link" href="./notifications.html">
-                <i class="material-icons">notifications</i>
-                <p>Notifications</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-                <i class="material-icons">language</i>
-                <p>RTL Support</p>
-            </a>
-        </li>
-        <li class="nav-item active-pro ">
-            <a class="nav-link" href="./upgrade.html">
-                <i class="material-icons">unarchive</i>
-                <p>Upgrade to PRO</p>
+                <i class="material-icons">perm_contact_calendar</i>
+                <p>Registro</p>
             </a>
         </li>
     </ul>
