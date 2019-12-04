@@ -6,13 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
+    public function lodgments()
+    {
+        return $this->belongsTo(Lodgment::class);
+    }
     public function typeRooms()
     {
-
+        return $this->belongsTo(TypeRoom::class);
     }
 
-    public function promotions(Type $var = null)
+    public function promotions()
     {
-        # code...
+        return $this->hasOne(Promo::class);
     }
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
+
 }

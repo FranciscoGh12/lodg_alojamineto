@@ -13,7 +13,7 @@ class Lodgment extends Model
 
     public function rooms()
     {
-        # code...
+        return $this->hasMany(Room::class);
     }
 
 }

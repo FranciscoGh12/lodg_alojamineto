@@ -70,7 +70,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class)->withTimestamps();
     }
 
-    public function lodgments(Type $var = null)
+    public function lodgments()
     {
         return $this->belongsTo(Lodgment::class);
     }

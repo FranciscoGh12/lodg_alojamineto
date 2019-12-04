@@ -20,10 +20,7 @@ class CreateLodgmentsTable extends Migration
             $table->string('picture_lodg');
             $table->string('description_lodg');
             $table->char('type_lodg',32);
-            $table->integer('room_id')->unsigned();
             $table->timestamps();
-
-            $table->foreign('room_id')->references('id')->on('rooms');
         });
     }
 
