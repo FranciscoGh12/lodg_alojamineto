@@ -30,7 +30,13 @@
 
 <body>
     <div id="app">
-        <div class="wrapper ">
+        <div style="background:url(frontend/images/backtlaco.jpg)
+        no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+        " class="wrapper ">
             @if (Request::is('admin*'))
                 @include('layouts.partial.sidebar')
             @endif

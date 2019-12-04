@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','lodgment','type','direction','picture',
+        'name', 'email', 'password',
     ];
 
     /**
@@ -68,5 +68,10 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+    public function lodgments(Type $var = null)
+    {
+        return $this->belongsTo(Lodgment::class);
     }
 }
