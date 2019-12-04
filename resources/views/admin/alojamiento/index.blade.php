@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Tipo de habitacion')
+@section('title','Alojamientos')
 
 @push('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
@@ -11,40 +11,46 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{ route('typeRoom.create') }}" class="btn btn-primary">Add New</a>
+                    <a href="#" class="btn btn-primary">Add New</a>
                     @include('layouts.partial.msg')
                     <div class="card">
                         <div class="card-header card-header-primary" data-background-color="purple">
-                            <h4 class="title">Tipos de habitacion</h4>
+                            <h4 class="title">Alojamientos</h4>
                         </div>
                         <div class="card-content table-responsive">
                             <table id="table" class="table"  cellspacing="0" width="100%">
                                 <thead class="text-primary">
+                                <th>Foto</th>
                                 <th>ID</th>
                                 <th>Tipo</th>
-                                <th>Action</th>
+                                <th>Nombre</th>
+                                <th>Direccion</th>
+                                <th>Descripccion</th>
+                                <th>Acciones</th>
                                 </thead>
                                 <tbody>
-                                    @foreach($typeRooms as $key=>$typeRoom)
                                         <tr>
-                                            <td>{{ $key + 1 }}</td>
-                                            <td>{{ $typeRoom->type_room }}</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td>
-                                                <a href="{{ route('typeRoom.edit',$typeRoom->id) }}" class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>
+                                                <a href="#" class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>
 
-                                                <form id="delete-form-{{ $typeRoom->id }}" action="{{ route('typeRoom.destroy',$typeRoom->id) }}" style="display: none;" method="POST">
+                                                <form id="" action="#" style="display: none;" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
-                                                <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Seguro de que lo quiere eliminar?')){
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure? You want to delete this?')){
                                                     event.preventDefault();
-                                                    document.getElementById('delete-form-{{ $typeRoom->id }}').submit();
+                                                    document.getElementById('delete-form-{{}}').submit();
                                                 }else {
                                                     event.preventDefault();
                                                         }"><i class="material-icons">delete</i></button>
                                             </td>
                                         </tr>
-                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

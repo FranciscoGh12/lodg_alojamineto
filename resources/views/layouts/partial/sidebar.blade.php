@@ -1,38 +1,38 @@
 <div class="sidebar" data-color="purple" data-background-color="white"
 data-image="{{url('backend/img/sidebar-1.jpg')}}">
 <div class="logo">
-    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-        Creative Tim
+    <a href="" class="simple-text logo-normal">
+            Hola {{Session::get('name')}}
     </a>
 </div>
 <div class="sidebar-wrapper">
     <ul class="nav">
         <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+        <a class="nav-link" href="{{route('admin.dashboard')}}">
                 <i class="material-icons">dashboard</i>
                 <p>Dashboard</p>
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+        <a class="nav-link" href="{{route('alojamiento')}}">
                 <i class="material-icons">account_box</i>
                 <p>Alojamientos</p>
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="{{route('reservacion')}}">
                 <i class="material-icons">content_paste</i>
                 <p>Reservaciones</p>
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="{{route('habitacion')}}">
                 <i class="material-icons">hotel</i>
                 <p>Habitaciones</p>
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+            <a class="nav-link" href="{{route('promocion')}}">
                 <i class="material-icons">attach_money</i>
                 <p>Promociones</p>
             </a>

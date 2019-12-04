@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\TypeRoom;
 
-class TypeRoomController extends Controller
+class AlojamientoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class TypeRoomController extends Controller
      */
     public function index()
     {
-        $typeRooms = TypeRoom::all();
-
-        return view('admin.typeRoom.index',compact('typeRooms'));
+        return view('admin.alojamiento.index');
     }
 
     /**
@@ -27,7 +24,7 @@ class TypeRoomController extends Controller
      */
     public function create()
     {
-        return view('admin.typeRoom.create');
+        //
     }
 
     /**
@@ -38,15 +35,7 @@ class TypeRoomController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'type' => 'required',
-        ]);
-
-        $typeRoom = new TypeRoom();
-        $typeRoom ->type_room = $request->type;
-        $typeRoom->save();
-
-        return redirect()->route('typeRoom.index')->with('successMsg','Tipo de habitacion agregada');
+        //
     }
 
     /**
@@ -68,9 +57,7 @@ class TypeRoomController extends Controller
      */
     public function edit($id)
     {
-        $typeRoom = TypeRoom::find($id);
-
-        return view('admin.typeRoom.edit',compact('typeRoom'));
+        //
     }
 
     /**
@@ -82,15 +69,7 @@ class TypeRoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'type' => 'required',
-        ]);
-
-        $typeRoom = TypeRoom::find($id);
-        $typeRoom ->type_room = $request->type;
-        $typeRoom->save();
-
-        return redirect()->route('typeRoom.index')->with('successMsg','Tipo de habitacion agregada');
+        //
     }
 
     /**
@@ -101,8 +80,6 @@ class TypeRoomController extends Controller
      */
     public function destroy($id)
     {
-        typeRoom::find($id)->delete();
-
-        return redirect()->back()->with('successMsg','Tipo de habitacion eliminada');
+        //
     }
 }
