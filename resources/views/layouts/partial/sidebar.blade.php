@@ -14,7 +14,7 @@ data-image="{{url('backend/img/sidebar-1.jpg')}}">
             </a>
         </li>
         <li class="nav-item ">
-        <a class="nav-link" href="{{route('alojamiento')}}">
+        <a class="nav-link" href="{{route('alojamiento.index')}}">
                 <i class="material-icons">account_box</i>
                 <p>Alojamientos</p>
             </a>
@@ -44,7 +44,7 @@ data-image="{{url('backend/img/sidebar-1.jpg')}}">
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
+        <a class="nav-link" href="{{route('registro.index')}}">
                 <i class="material-icons">perm_contact_calendar</i>
                 <p>Registro</p>
             </a>

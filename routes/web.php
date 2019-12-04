@@ -37,10 +37,11 @@ Auth::routes();
 
 Route::group(['prefix'=>'admin','middleware'=>'auth','namespace'=>'Admin'], function () {
     Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
-    Route::get('alojamiento','AlojamientoController@index')->name('alojamiento');
+    Route::resource('alojamiento', 'AlojamientoController');
     Route::get('reservacion','ReservacionController@index')->name('reservacion');
     Route::get('habitacion','HabitacionController@index')->name('habitacion');
     Route::get('promocion','PromoController@index')->name('promocion');
+    Route::resource('registro', 'RegistroController');
     Route::resource('typeRoom', 'TypeRoomController');
 });
 

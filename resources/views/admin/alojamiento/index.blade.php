@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="#" class="btn btn-primary">Add New</a>
+                <a href="{{route('alojamiento.create')}}" class="btn btn-primary">Agregar</a>
                     @include('layouts.partial.msg')
                     <div class="card">
                         <div class="card-header card-header-primary" data-background-color="purple">
@@ -29,28 +29,32 @@
                                 <th>Acciones</th>
                                 </thead>
                                 <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                                <a href="#" class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>
+                                    @foreach ($lodgments as $key=>$lodg)
 
-                                                <form id="" action="#" style="display: none;" method="POST">
+
+                                        <tr>
+                                            <td><img class="img-responsive img-thumbnail" src="{{ asset('uploads/lodgments/'.$lodg->picture_lodg) }}" style="height: 100px; width: 100px" alt=""></td>
+                                        <td>{{$key+1}}</td>
+                                        <td>{{$lodg->type_lodg}}</td>
+                                        <td>{{$lodg->name_lodg}}</td>
+                                        <td>{{$lodg->direction_lodg}}</td>
+                                        <td>{{$lodg->description_lodg}}</td>
+                                            <td>
+                                                <a href="{{ route('alojamiento.edit',$lodg->id) }}" class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>
+
+                                                <form id="delete-form-{{ $lodg->id }}" action="{{ route('alojamiento.destroy',$lodg->id) }}" style="display: none;" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
                                                 <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure? You want to delete this?')){
                                                     event.preventDefault();
-                                                    document.getElementById('delete-form-{{}}').submit();
+                                                    document.getElementById('delete-form-{{$lodg->id}}').submit();
                                                 }else {
                                                     event.preventDefault();
                                                         }"><i class="material-icons">delete</i></button>
                                             </td>
                                         </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
