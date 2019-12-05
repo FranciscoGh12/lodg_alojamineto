@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('layouts.index');
 })->name('index');
@@ -23,9 +25,8 @@ Route::get('/about', function () {
     return view('layouts.about');
 })->name('about');
 
-Route::get('/lodgment', function () {
-    return view('layouts.lodgment');
-})->name('lodgments');
+
+Route::resource('lodgment','Frontend\LodgmentController');
 
 Route::get('/lodgment_item', function () {
     return view('layouts.lodgment_item');

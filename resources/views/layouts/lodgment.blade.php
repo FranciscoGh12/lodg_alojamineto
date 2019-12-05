@@ -7,16 +7,12 @@
         <div class="row align-items-center justify-content-center text-center">
 
             <div class="col-md-10" data-aos="fade-up" data-aos-delay="400">
-
-
                 <div class="row justify-content-center">
                     <div class="col-md-8 text-center">
                         <h1>Alojamientos</h1>
                         <p data-aos="fade-up" data-aos-delay="100">El alojamiento que buscas </p>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -27,32 +23,24 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-
+                    @foreach ($lodgs as $lodg)
                 <div class="d-block d-md-flex listing-horizontal">
 
-                    <a href="{{route('lodg_item')}}" class="img d-block"
-                        style="background-image: url('images/img_2.jpg')">
-                        <span class="category">Hotel</span>
+
+
+                    <a href="{{route('lodgment.show',$lodg->id)}}" class="img d-block"
+                        style="background-image: url('{{ asset('uploads/lodgments/'.$lodg->picture_lodg) }}')">
+                        <span class="category">{{$lodg->type_lodg}}</span>
                     </a>
                     <div class="lh-content">
-                        <a href="{{route('lodg_item')}}" class="bookmark"><span class="fa fa-eye"></span></a>
-                        <h3><a href="#">Jones Grill &amp; Hotel</a></h3>
-                        <p>Don St, Brooklyn, New</p>
-                        <p>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-secondary"></span>
-                            <span>(492 Reviews)</span>
-                        </p>
-
-
+                        <a href="{{route('lodgment.show',$lodg->id)}}" class="bookmark"><span class="fa fa-eye fa-2x"></span></a>
+                    <h3><a href="#">{{$lodg->name_lodg}}</a></h3>
+                    <p>{{$lodg->description_lodg}}</p>
                     </div>
 
                 </div>
 
-
+                @endforeach
                 <div class="col-12 mt-5 text-center">
                     <div class="custom-pagination">
                         <span>1</span>
@@ -64,6 +52,7 @@
                 </div>
 
             </div>
+
             <div class="col-lg-3 ml-auto">
 
                 <div class="mb-5">
@@ -73,9 +62,10 @@
                             <div class="select-wrap">
                                 <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
                                 <select class="form-control" name="" id="">
-                                    <option value="">Alojamiento</option>
-                                    <option value="">Hotel</option>
-                                    <option value="">Posada</option>
+                                        <option value="">Alojamiento</option>
+                                        <option value="Hotel">Hotel</option>
+                                        <option value="Posada">Posada</option>
+
                                 </select>
                             </div>
                         </div>
@@ -85,9 +75,9 @@
                                     <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
                                     <select class="form-control" name="" id="">
                                             <option value="">Habitacion</option>
-                                            <option value="">Individual</option>
-                                            <option value="">Matrimonial</option>
-                                            <option value="">Doble</option>
+                                    @foreach ($typeR as $type)
+                                <option value="{{$type->id}}">{{$type->type_room}}</option>
+                                    @endforeach
                                     </select>
                                 </div>
                             </div>

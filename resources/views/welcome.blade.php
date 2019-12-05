@@ -61,7 +61,7 @@
 
                             <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                             <li class="active"><a href="{{route('index')}}"><span>Home</span></a></li>
-                            <li><a href="{{route('lodgments')}}"><span>Alojamiento</span></a></li>
+                            <li><a href="{{route('lodgment.index')}}"><span>Alojamiento</span></a></li>
                             <li><a href="{{route('about')}}"><span>Nosotros</span></a></li>
                             <li><a href="{{route('contact')}}"><span>Contacto</span></a></li>
                             </ul>
