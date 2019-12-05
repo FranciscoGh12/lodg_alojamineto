@@ -32,6 +32,11 @@ Route::get('/lodgment_item', function () {
     return view('layouts.lodgment_item');
 })->name('lodg_item');
 
+Route::get('/reserv', function () {
+    return view('layouts.reservation');
+})->name('reserv');
+
+Route::post('/contact','Frontend\ContactController@sendMessage')->name('contact.send');
 
 Auth::routes();
 

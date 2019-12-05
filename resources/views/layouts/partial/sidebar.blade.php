@@ -13,12 +13,16 @@ data-image="{{url('backend/img/sidebar-1.jpg')}}">
                 <p>Dashboard</p>
             </a>
         </li>
+        @hasrole('su')
         <li class="nav-item ">
         <a class="nav-link" href="{{route('alojamiento.index')}}">
                 <i class="material-icons">account_box</i>
                 <p>Alojamientos</p>
             </a>
         </li>
+        @endhasrole
+
+
         <li class="nav-item ">
             <a class="nav-link" href="{{route('reservacion')}}">
                 <i class="material-icons">content_paste</i>
@@ -26,12 +30,14 @@ data-image="{{url('backend/img/sidebar-1.jpg')}}">
             </a>
         </li>
 
+        @hasrole('admin')
         <li class="nav-item ">
             <a class="nav-link" href="{{route('habitacion.index')}}">
                 <i class="material-icons">hotel</i>
                 <p>Habitaciones</p>
             </a>
         </li>
+        @endhasrole
 
         <li class="nav-item ">
             <a class="nav-link" href="{{route('promocion.index')}}">
@@ -39,18 +45,25 @@ data-image="{{url('backend/img/sidebar-1.jpg')}}">
                 <p>Promociones</p>
             </a>
         </li>
+
+        @hasrole('su')
         <li class="nav-item ">
             <a class="nav-link" href="./map.html">
                 <i class="material-icons">chat</i>
                 <p>Mensajes</p>
             </a>
         </li>
+        @endhasrole
+
+
+        @hasrole('su')
         <li class="nav-item ">
         <a class="nav-link" href="{{route('registro.index')}}">
                 <i class="material-icons">perm_contact_calendar</i>
                 <p>Registro</p>
             </a>
         </li>
+        @endhasrole
 
         <li class="nav-item active-pro ">
                 <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="material-icons">block</i>

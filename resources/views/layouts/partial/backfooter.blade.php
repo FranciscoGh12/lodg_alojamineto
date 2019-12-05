@@ -3,23 +3,13 @@
             <nav class="float-left">
                 <ul>
                     <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
+                        <a href="">
+                           LODG
                         </a>
                     </li>
                     <li>
-                        <a href="https://creative-tim.com/presentation">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/license">
-                            Licenses
+                        <a href="#">
+                            Alojamientos
                         </a>
                     </li>
                 </ul>

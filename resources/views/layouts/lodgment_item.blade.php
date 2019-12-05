@@ -39,7 +39,7 @@
 
             <div class="row">
               <div class="col-md-6">
-                <a href="#" class="btn btn-primary btn-md text-white">Reservar</a>
+              <a href="{{route('reserv')}}" class="btn btn-primary btn-md text-white">Reservar</a>
               </div>
             </div>
           </div>
