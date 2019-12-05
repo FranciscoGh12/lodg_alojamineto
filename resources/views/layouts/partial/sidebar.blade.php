@@ -2,7 +2,7 @@
 data-image="{{url('backend/img/sidebar-1.jpg')}}">
 <div class="logo">
     <a href="" class="simple-text logo-normal">
-            Hola {{Session::get('name')}}
+            Hola {{Auth::user()->name}}
     </a>
 </div>
 <div class="sidebar-wrapper">
@@ -25,12 +25,14 @@ data-image="{{url('backend/img/sidebar-1.jpg')}}">
                 <p>Reservaciones</p>
             </a>
         </li>
+
         <li class="nav-item ">
             <a class="nav-link" href="{{route('habitacion.index')}}">
                 <i class="material-icons">hotel</i>
                 <p>Habitaciones</p>
             </a>
         </li>
+
         <li class="nav-item ">
             <a class="nav-link" href="{{route('promocion.index')}}">
                 <i class="material-icons">attach_money</i>

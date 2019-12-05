@@ -4,6 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Lodgment;
+use App\Room;
+use App\TypeRoom;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+
+
 
 class HabitacionController extends Controller
 {
@@ -14,7 +22,9 @@ class HabitacionController extends Controller
      */
     public function index()
     {
-        return view('admin.habitacion.index');
+        $user = Auth::user()->lodgment_id;
+        $rooms = DB::select("SELECT * FROM rooms WHERE lodg_id ='".$user."'");
+        return view('admin.habitacion.index',compact('rooms'));
     }
 
     /**
@@ -24,7 +34,8 @@ class HabitacionController extends Controller
      */
     public function create()
     {
-        return view('admin.habitacion.create');
+        $typeR = TypeRoom::all();
+        return view('admin.habitacion.create',compact('typeR'));
     }
 
     /**
@@ -35,7 +46,20 @@ class HabitacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'numh' => 'required',
+            'precio' => 'required',
+        ]);
+        $dato = Auth::user()->lodgment_id;
+        $room = new Room();
+        $room->num_room = $request->numh;
+        $room->lodg_id = $dato;
+        $room->status_room = $request->status;
+        $room->description = $request->description;
+        $room->prize_room = $request->precio;
+        $room->type_room_id = $request->type;
+        $room->save();
+        return redirect()->route('habitacion.index')->with('successMsg','Habitacion Agregada');
     }
 
     /**
@@ -57,7 +81,9 @@ class HabitacionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $room = Room::find($id);
+        $typeR = TypeRoom::all();
+        return view('admin.habitacion.edit',compact('room'))->with('typeR',$typeR);
     }
 
     /**
@@ -69,7 +95,20 @@ class HabitacionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'numh' => 'required',
+            'precio' => 'required',
+        ]);
+        $dato = Auth::user()->lodgment_id;
+        $room = Room::find($id);
+        $room->num_room = $request->numh;
+        $room->lodg_id = $dato;
+        $room->status_room = $request->status;
+        $room->description = $request->description;
+        $room->prize_room = $request->precio;
+        $room->type_room_id = $request->type;
+        $room->save();
+        return redirect()->route('habitacion.index')->with('successMsg','Habitacion Agregada');
     }
 
     /**
@@ -80,6 +119,8 @@ class HabitacionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Room::find($id)->delete();
+
+        return redirect()->back()->with('successMsg','Habitacion eliminado');
     }
 }

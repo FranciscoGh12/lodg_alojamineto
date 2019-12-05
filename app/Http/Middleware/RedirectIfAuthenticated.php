@@ -2,8 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Role;
 use Closure;
 use Illuminate\Support\Facades\Auth;
+
 
 class RedirectIfAuthenticated
 {
@@ -17,10 +19,17 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+        $suid=1;
+        $adminid=2;
+        $recepid=3;
+        if (Auth::guard($guard)->check() && $request->user()->authorizeRoles(['su', 'admin']) ) {
+            return redirect()->route('admin.dashboard');
+        }elseif (Auth::guard($guard)->check() && $request->user()->authorizeRoles(['user'])) {
+            return redirect()->route('recepcion.dashboard');
+        }else{
+            return $next($request);
         }
 
-        return $next($request);
+
     }
 }

@@ -18,13 +18,14 @@
                     </div>
                     <br> <br>
                     <div class="card-content">
-                        <form method="POST" action="{{ route('habitacion.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('habitacion.update',$room->id) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div style="padding:30px" class="row">
                                 <div class="col-md-12">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Numero de habitacion:</label>
-                                        <input type="text" class="form-control" name="numh">
+                                    <input type="text" class="form-control" name="numh" value="{{$room->num_room}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -33,7 +34,6 @@
                                         <div class="select-wrap">
                                                 <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
                                                 <select class="form-control" name="status" id="statusForm">
-
                                                     <option value="R">Reservado</option>
                                                     <option value="D">Disponible</option>
 
@@ -59,7 +59,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Descripccion:</label>
-                                        <textarea maxlength="180" name="description" class="form-control" id="descriptionFormLodg" rows="2"></textarea>
+                                    <textarea maxlength="180" name="description" class="form-control" id="descriptionFormLodg" rows="2">{{$room->description}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-">
@@ -71,7 +71,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Precio</label>
-                                        <input type="text" class="form-control" name="precio">
+                                    <input type="text" class="form-control" name="precio" value="{{$room->prize_room}}">
                                     </div>
                                 </div>
 

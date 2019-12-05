@@ -35,7 +35,7 @@ Route::get('/lodgment_item', function () {
 Auth::routes();
 
 
-Route::group(['prefix'=>'admin','middleware'=>'auth','namespace'=>'Admin'], function () {
+Route::group(['prefix'=>'admin','middleware'=>['auth','su'],'namespace'=>'Admin'], function () {
     Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
     Route::resource('alojamiento', 'AlojamientoController');
     Route::get('reservacion','ReservacionController@index')->name('reservacion');
@@ -43,5 +43,10 @@ Route::group(['prefix'=>'admin','middleware'=>'auth','namespace'=>'Admin'], func
     Route::resource('promocion','PromoController');
     Route::resource('registro', 'RegistroController');
     Route::resource('typeRoom', 'TypeRoomController');
+});
+
+Route::group(['as'=>'recepcion.','prefix'=>'recepcion','middleware'=>'recepcion','namespace'=>'Recep'], function () {
+    Route::get('dashboard','DashboardController@index')->name('dashboard');
+
 });
 

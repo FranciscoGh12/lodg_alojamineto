@@ -30,28 +30,30 @@
                                 <th>Acciones</th>
                                 </thead>
                                 <tbody>
+                                    @foreach ($rooms as $key => $room)
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                        <td>{{$key+1}}</td>
+                                        <td>{{$room->num_room}}</td>
+                                        <td>{{$room->type_room_id}}</td>
+                                        <td>{{$room->description}}</td>
+                                        <td>{{$room->status_room}}</td>
+                                        <td>${{$room->prize_room}}</td>
                                             <td>
-                                                <a href="#" class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>
+                                                <a href="{{ route('habitacion.edit',$room->id) }}"  class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>
 
-                                                <form id="" action="#" style="display: none;" method="POST">
+                                                <form id="delete-form-{{ $room->id }}" action="{{ route('habitacion.destroy',$room->id) }}" style="display: none;" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
                                                 <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure? You want to delete this?')){
                                                     event.preventDefault();
-                                                    document.getElementById('delete-form-{{}}').submit();
+                                                    document.getElementById('delete-form-{{$room->id}}').submit();
                                                 }else {
                                                     event.preventDefault();
                                                         }"><i class="material-icons">delete</i></button>
                                             </td>
                                         </tr>
+                                        @endforeach
                                 </tbody>
                             </table>
                         </div>
