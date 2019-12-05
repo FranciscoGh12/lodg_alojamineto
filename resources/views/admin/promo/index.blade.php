@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="#" class="btn btn-primary">Add New</a>
+                <a href="{{route('promocion.create')}}" class="btn btn-primary">Add New</a>
                     @include('layouts.partial.msg')
                     <div class="card">
                         <div class="card-header card-header-primary" data-background-color="purple">

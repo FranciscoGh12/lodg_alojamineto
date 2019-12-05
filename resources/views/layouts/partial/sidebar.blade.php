@@ -26,13 +26,13 @@ data-image="{{url('backend/img/sidebar-1.jpg')}}">
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="{{route('habitacion')}}">
+            <a class="nav-link" href="{{route('habitacion.index')}}">
                 <i class="material-icons">hotel</i>
                 <p>Habitaciones</p>
             </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="{{route('promocion')}}">
+            <a class="nav-link" href="{{route('promocion.index')}}">
                 <i class="material-icons">attach_money</i>
                 <p>Promociones</p>
             </a>

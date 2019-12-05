@@ -40,7 +40,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth','namespace'=>'Admin'], func
     Route::resource('alojamiento', 'AlojamientoController');
     Route::get('reservacion','ReservacionController@index')->name('reservacion');
     Route::resource('habitacion','HabitacionController');
-    Route::get('promocion','PromoController@index')->name('promocion');
+    Route::resource('promocion','PromoController');
     Route::resource('registro', 'RegistroController');
     Route::resource('typeRoom', 'TypeRoomController');
 });

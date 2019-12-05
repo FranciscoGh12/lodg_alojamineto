@@ -12,6 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{asset('backend/picker/js/bootstrap-datepicker.min.js')}}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,6 +24,9 @@
     <!-- Styles -->
     <!-- CSS Files -->
     <link href="{{asset('backend/css/material-dashboard.css?v=2.1.1')}}" rel="stylesheet" />
+<link rel="stylesheet" href="{{asset('backend/picker/css/bootstrap-datepicker.css')}}">
+<link rel="stylesheet" href="{{asset('backend/picker/css/bootstrap-datepicker3.css')}}">
+<link rel="stylesheet" href="{{asset('backend/picker/css/bootstrap-datepicker.standalone.css')}}">
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('backend/demo/demo.css')}}" rel="stylesheet" />
     @stack('css')
@@ -275,6 +279,24 @@
       // Javascript method's body can be found in assets/js/demos.js
       md.initDashboardPageCharts();
 
+    });
+</script>
+<script>
+    var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+    $('#startDate').datepicker({
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome',
+        minDate: today,
+        maxDate: function () {
+            return $('#endDate').val();
+        }
+    });
+    $('#endDate').datepicker({
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome',
+        minDate: function () {
+            return $('#startDate').val();
+        }
     });
 </script>
 @stack('script')
