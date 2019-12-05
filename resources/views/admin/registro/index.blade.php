@@ -40,16 +40,16 @@
                                         {{$n->name_lodg}}</td>
                                     @endforeach
                                     <td>
-                                        <a href="" class="btn btn-info btn-sm"><i
+                                        <a href="{{ route('registro.edit',$user->id) }}" class="btn btn-info btn-sm"><i
                                                 class="material-icons">mode_edit</i></a>
 
-                                        <form id="" action="" style="display: none;" method="POST">
+                                        <form id="delete-form-{{ $user->id }}" action="{{ route('registro.destroy',$user->id) }}"  style="display: none;" method="POST">
                                             @csrf
                                             @method('DELETE')
                                         </form>
-                                        <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure? You want to delete this?')){
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Esta a punto de borrar un usuario. Esta seguro?')){
                                                         event.preventDefault();
-                                                        document.getElementById('').submit();
+                                                        document.getElementById('delete-form-{{$user->id}}').submit();
                                                     }else {
                                                         event.preventDefault();
                                                             }"><i class="material-icons">delete</i></button>

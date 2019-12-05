@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="#" class="btn btn-primary">Add New</a>
+                <a href="{{route('habitacion.create')}}" class="btn btn-primary">Add New</a>
                 <a href="{{route('typeRoom.index')}}" class="btn btn-info">Tipo de habitacion</a>
                     @include('layouts.partial.msg')
                     <div class="card">

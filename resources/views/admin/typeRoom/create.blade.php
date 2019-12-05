@@ -32,12 +32,6 @@
 
                                                 </div>
                                     </div>
-                                    <div class="col-md-4">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Precio</label>
-                                                <input type="text" class="form-control" name="precio">
-                                            </div>
-                                        </div>
                                 </div>
                                 <a href="{{ route('typeRoom.index') }}" class="btn btn-danger">Back</a>
                                 <button type="submit" class="btn btn-primary">Save</button>

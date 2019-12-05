@@ -39,7 +39,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth','namespace'=>'Admin'], func
     Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
     Route::resource('alojamiento', 'AlojamientoController');
     Route::get('reservacion','ReservacionController@index')->name('reservacion');
-    Route::get('habitacion','HabitacionController@index')->name('habitacion');
+    Route::resource('habitacion','HabitacionController');
     Route::get('promocion','PromoController@index')->name('promocion');
     Route::resource('registro', 'RegistroController');
     Route::resource('typeRoom', 'TypeRoomController');

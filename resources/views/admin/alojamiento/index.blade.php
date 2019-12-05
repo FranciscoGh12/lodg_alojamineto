@@ -46,7 +46,7 @@
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
-                                                <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure? You want to delete this?')){
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="if(confirm('Esta a punto de borrar un alojamiento. Esta seguro?')){
                                                     event.preventDefault();
                                                     document.getElementById('delete-form-{{$lodg->id}}').submit();
                                                 }else {
