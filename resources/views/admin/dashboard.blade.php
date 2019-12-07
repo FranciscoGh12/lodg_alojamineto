@@ -14,7 +14,7 @@
                             <i class="material-icons">local_hotel</i>
                         </div>
                         <p class="card-category">Hoteles</p>
-                        <h3 class="card-title">34</h3>
+                    <h3 class="card-title">{{$hoteles_count}}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -30,7 +30,7 @@
                             <i class="material-icons">local_hotel</i>
                         </div>
                         <p class="card-category">Posadas</p>
-                        <h3 class="card-title">15</h3>
+                        <h3 class="card-title">{{$posadas_count}}</h3>
                     </div>
                     <div class="card-footer">
                             <div class="stats">
