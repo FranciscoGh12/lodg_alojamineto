@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap-datepicker.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <link rel="stylesheet" href="{{asset('frontend/fonts/flaticon/font/flaticon.css')}}">
 
@@ -154,6 +155,7 @@
     <script src="{{asset('frontend/js/jquery.countdown.min.js')}}"></script>
     <script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="{{asset('frontend/js/aos.js')}}"></script>
     <script src="{{asset('frontend/js/rangeslider.min.js')}}"></script>
 
@@ -172,7 +174,7 @@
     </script>
 
     <script src="{{asset('frontend/js/main.js')}}"></script>
-
+    {!! Toastr::message() !!}
 </body>
 
 </html>

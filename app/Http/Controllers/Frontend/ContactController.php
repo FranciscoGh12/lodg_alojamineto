@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     public function sendMessage(Request $request)
     {
-        $this->validate($request,[
+        $request->validate([
             'fname' => 'required',
             'email' => 'required',
             'fdireccion' => 'required',
@@ -24,12 +24,12 @@ class ContactController extends Controller
             $contact->name = $request->fname;
             $contact->email = $request->email;
             $contact->subject = $request->subject;
-            $contact->direction = $request->subject;
+            $contact->direction = $request->fdireccion;
             $contact->message = $request->message;
 
             $contact->save();
 
-            Toastr::success('Mensaje Enviado','Success',["positionClass"=>"toast-top-right"]);
+            Toastr::success('Mensaje Enviado','Success',["positionClass"=>"toast-top-left"]);
             return redirect()->back();
 
 

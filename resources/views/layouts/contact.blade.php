@@ -24,17 +24,16 @@
     <div class="container">
       <div class="row">
         <div class="col-md-7 mb-5"  data-aos="fade">
-
+            @include('layouts.partial.msg')
 
 
         <form action="{{route('contact.send')}}" method="POST" class="p-5 bg-white" style="margin-top: -150px;">
 
             @csrf
-            @method('PUT')
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="text-black" for="fname">Nombre: </label>
-                <input type="text" id="fname" class="form-control" placeholder="Nombre del encargado">
+                <input type="text" name="fname" id="fname" class="form-control" placeholder="Nombre del encargado">
               </div>
             </div>
 
@@ -42,7 +41,7 @@
 
                     <div class="col-md-12">
                       <label class="text-black" for="fdireccion">Direccion: </label>
-                      <input type="text" id="fdireccion" class="form-control">
+                      <input type="text" name="fdireccion" id="fdireccion" class="form-control">
                     </div>
                   </div>
 
@@ -70,11 +69,9 @@
               </div>
             </div>
 
-            <div class="row form-group">
               <div class="col-md-12">
                 <input type="submit" value="Enviar" class="btn btn-primary btn-md text-white">
               </div>
-            </div>
 
 
           </form>

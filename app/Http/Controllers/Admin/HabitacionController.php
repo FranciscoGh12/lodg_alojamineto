@@ -50,6 +50,7 @@ class HabitacionController extends Controller
             'numh' => 'required',
             'precio' => 'required',
         ]);
+
         $dato = Auth::user()->lodgment_id;
         $room = new Room();
         $room->num_room = $request->numh;
