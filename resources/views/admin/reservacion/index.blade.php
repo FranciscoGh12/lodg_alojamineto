@@ -11,12 +11,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="#" class="btn btn-primary">Add New</a>
                     @include('layouts.partial.msg')
                     <div class="card">
                         <div class="card-header card-header-primary" data-background-color="purple">
                             <h4 class="title">Reservaciones</h4>
                         </div>
+
                         <div class="card-content table-responsive">
                             <table id="table" class="table"  cellspacing="0" width="100%">
                                 <thead class="text-primary">
@@ -30,13 +30,27 @@
                                 <th>Acciones</th>
                                 </thead>
                                 <tbody>
+                                    @foreach ($reservations as $key => $reserv)
+                                    <?php
+                                    $huesped = DB::table('clients')->where('id',$reserv->client_id)->get();
+                                    $rooms = DB::table('rooms')->where('id',$reserv->room_id)->get();
+                                    ?>
+
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                        <td>{{$key+1}}</td>
+                                        <td>
+                                            @foreach ($huesped as $h)
+                                                {{$h->name_client}}
+                                            @endforeach
+                                        </td>
+                                    <td>{{$reserv->start_reservation}}</td>
+                                    <td>{{$reserv->end_reservation}}</td>
+                                    <td>default.jpg</td>
+                                    <td>
+                                        @foreach ($rooms as $r)
+                                            {{$r->num_room}}
+                                        @endforeach
+                                    </td>
                                             <td></td>
                                             <td>
                                                 <a href="#" class="btn btn-info btn-sm"><i class="material-icons">mode_edit</i></a>
@@ -53,6 +67,7 @@
                                                         }"><i class="material-icons">delete</i></button>
                                             </td>
                                         </tr>
+                                        @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -48,7 +48,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','su'],'namespace'=>'Admin'
     Route::resource('promocion','PromoController');
     Route::resource('registro', 'RegistroController');
     Route::resource('typeRoom', 'TypeRoomController');
-
+    Route::get('export', 'CsvFile@csv_export')->name('export');
     Route::get('contact','ContactController@index')->name('contact.index');
     Route::get('contact/{id}','ContactController@show')->name('contact.show');
     Route::delete('contact/{id}','ContactController@destroy')->name('contact.destroy');
