@@ -188,7 +188,7 @@
     todayBtn:  true,
     language: 'es',
     autoclose: true,
-    format: "yyyy - mm - dd",
+    format: "yyyy-mm-dd",
     showMeridian: true
     }).on('changeDate', function (selected) {
     var minDate = new Date(selected.date.valueOf());
@@ -200,7 +200,7 @@
     todayBtn:  true,
     autoclose: true,
     language: 'es',
-    format: "yyyy - mm - dd",
+    format: "yyyy-mm-dd",
     showMeridian: true
     })
     .on('changeDate', function (selected) {

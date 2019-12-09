@@ -25,11 +25,12 @@
 <div class="site-section bg-light">
     <div class="container">
         <div class="row">
+             @include('layouts.partial.msg')
             <div class="col-md-7 mb-5" data-aos="fade">
 
 
 
-            <form action="{{route('reservation.reserv')}}" method="POST" class="p-5 bg-white" style="margin-top: -150px;">
+            <form action="{{route('reservation.reserv', $room->id)}}" method="POST" class="p-5 bg-white" style="margin-top: -150px;">
                 @csrf
                     <div class="row form-group">
                         <div class="col-md-6 mb-3 mb-md-0">
@@ -74,7 +75,7 @@
                             <div class="col-md-12">
                                 <div class="label-floating">
                                     <label class="control-label">Voucher:</label>
-                                    <input class="form-control" type="file" name="voucher" id="voucherLodg">
+                                    <input class="form-control" type="file" name="image" id="imageLodg">
                                 </div>
                             </div>
                         </div>

@@ -33,7 +33,7 @@ Route::get('/lodgment_item', function () {
 })->name('lodg_item');
 
 Route::get('reserv/{id}','Frontend\ReservController@show')->name('reserv.show');
-Route::post('/reservation','Frontend\ReservController@reserv')->name('reservation.reserv');
+Route::post('reservation/{id}','Frontend\ReservController@reserv')->name('reservation.reserv');
 
 Route::post('/contact','Frontend\ContactController@sendMessage')->name('contact.send');
 
