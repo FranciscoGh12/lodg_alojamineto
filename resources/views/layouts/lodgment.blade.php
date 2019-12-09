@@ -1,7 +1,7 @@
 @extends('welcome')
 @section('front-content')
 <div class="site-blocks-cover inner-page-cover overlay"
-    style="background-image: url('frontend/images/tlacotalpan2.jpg');" data-aos="fade"
+    style="background-image: url('{{asset('frontend/images/tlacotalpan2.jpg')}}')" data-aos="fade"
     data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
@@ -25,9 +25,6 @@
             <div class="col-lg-8">
                     @foreach ($lodgs as $lodg)
                 <div class="d-block d-md-flex listing-horizontal">
-
-
-
                     <a href="{{route('lodgment.show',$lodg->id)}}" class="img d-block"
                         style="background-image: url('{{ asset('uploads/lodgments/'.$lodg->picture_lodg) }}')">
                         <span class="category">{{$lodg->type_lodg}}</span>

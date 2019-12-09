@@ -2,7 +2,11 @@
 data-image="{{url('backend/img/sidebar-1.jpg')}}">
 <div class="logo">
     <a href="" class="simple-text logo-normal">
-            Hola {{Auth::user()->name}}
+            Hola <br>
+            <h6>
+                    {{Auth::user()->name}}
+
+            </h6>
     </a>
 </div>
 <div class="sidebar-wrapper">
@@ -48,7 +52,7 @@ data-image="{{url('backend/img/sidebar-1.jpg')}}">
 
         @hasrole('su')
         <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
+        <a class="nav-link" href="{{route('contact.index')}}">
                 <i class="material-icons">chat</i>
                 <p>Mensajes</p>
             </a>

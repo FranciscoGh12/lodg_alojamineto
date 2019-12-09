@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Lodgment;
 use App\TypeRoom;
+use App\Room;
+use DB;
 
 class LodgmentController extends Controller
 {
@@ -51,9 +53,9 @@ class LodgmentController extends Controller
     public function show($id)
     {
         $lodg = Lodgment::find($id);
-        $col_lodg = Lodgment::all();
+        $rooms = Room::where('lodg_id',$id)->get();
         $typeR = TypeRoom::all();
-        return view('layouts.lodgment_item', compact('lodg'))->with('typeR',$typeR)->with('col_lodg',$col_lodg);
+        return view('layouts.lodgment_item', compact('lodg'))->with('typeR',$typeR)->with('rooms',$rooms);
     }
 
     /**

@@ -32,9 +32,8 @@ Route::get('/lodgment_item', function () {
     return view('layouts.lodgment_item');
 })->name('lodg_item');
 
-Route::get('/reserv', function () {
-    return view('layouts.reservation');
-})->name('reserv');
+Route::get('reserv/{id}','Frontend\ReservController@show')->name('reserv.show');
+Route::post('/reservation','Frontend\ReservController@reserv')->name('reservation.reserv');
 
 Route::post('/contact','Frontend\ContactController@sendMessage')->name('contact.send');
 
@@ -49,6 +48,10 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','su'],'namespace'=>'Admin'
     Route::resource('promocion','PromoController');
     Route::resource('registro', 'RegistroController');
     Route::resource('typeRoom', 'TypeRoomController');
+
+    Route::get('contact','ContactController@index')->name('contact.index');
+    Route::get('contact/{id}','ContactController@show')->name('contact.show');
+    Route::delete('contact/{id}','ContactController@destroy')->name('contact.destroy');
 });
 
 Route::group(['as'=>'recepcion.','prefix'=>'recepcion','middleware'=>'recepcion','namespace'=>'Recep'], function () {

@@ -33,6 +33,10 @@
 
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
 
+    <link rel="stylesheet" type="text/css" href="{{asset('jquery/jquery.datetimepicker.css')}}" />
+    <script src="{{asset('jquery/jquery.js')}}"></script>
+    <script src="{{asset('jquery/build/jquery.datetimepicker.full.min.js')}}"></script>
+
 </head>
 
 <body>
@@ -61,10 +65,10 @@
                         <nav class="site-navigation position-relative text-right" role="navigation">
 
                             <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                            <li class="active"><a href="{{route('index')}}"><span>Home</span></a></li>
-                            <li><a href="{{route('lodgment.index')}}"><span>Alojamiento</span></a></li>
-                            <li><a href="{{route('about')}}"><span>Nosotros</span></a></li>
-                            <li><a href="{{route('contact')}}"><span>Contacto</span></a></li>
+                                <li class="active"><a href="{{route('index')}}"><span>Home</span></a></li>
+                                <li><a href="{{route('lodgment.index')}}"><span>Alojamiento</span></a></li>
+                                <li><a href="{{route('about')}}"><span>Nosotros</span></a></li>
+                                <li><a href="{{route('contact')}}"><span>Contacto</span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -155,6 +159,7 @@
     <script src="{{asset('frontend/js/jquery.countdown.min.js')}}"></script>
     <script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('frontend/js/bootstrap-datepicker.es.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="{{asset('frontend/js/aos.js')}}"></script>
     <script src="{{asset('frontend/js/rangeslider.min.js')}}"></script>
@@ -172,7 +177,39 @@
             showCursor: true
             });
     </script>
+    <script>
+        $( function() {
+    $( "#datetimepicker1" ).datepicker();
+  } );
+    </script>
+    <script>
+        $(document).ready(function(){
+        $("#startdate").datepicker({
+    todayBtn:  true,
+    language: 'es',
+    autoclose: true,
+    format: "yyyy - mm - dd",
+    showMeridian: true
+    }).on('changeDate', function (selected) {
+    var minDate = new Date(selected.date.valueOf());
+    $('#enddate').datepicker('setStartDate', minDate);
+    $('#enddate').datepicker('setDate', minDate); // <--THIS IS THE LINE ADDED
+    });
 
+    $("#enddate").datepicker({
+    todayBtn:  true,
+    autoclose: true,
+    language: 'es',
+    format: "yyyy - mm - dd",
+    showMeridian: true
+    })
+    .on('changeDate', function (selected) {
+        var maxDate = new Date(selected.date.valueOf());
+        $('#startdate').datepicker('setEndDate', maxDate);
+    });
+
+    });
+    </script>
     <script src="{{asset('frontend/js/main.js')}}"></script>
     {!! Toastr::message() !!}
 </body>
